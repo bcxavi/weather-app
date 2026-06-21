@@ -13,23 +13,26 @@ export async function displayWeather(weather) {
   const iconSrc = await getWeatherIcon(weather.conditions);
 
   result.innerHTML = `
-    <article class="weather-card">
-      <img class="weather-icon"
-           src="${iconSrc}"
-           alt="${weather.conditions}">
-
-      <h2>${weather.location}</h2>
+  <article class="weather-card">
+    <div class="weather-main">
+      <div>
+        <img class="weather-icon"
+             src="${iconSrc}"
+             alt="${weather.conditions}">
+        <h2>${weather.location}</h2>
+        <p class="conditions">${weather.conditions}</p>
+      </div>
 
       <p class="temperature">${Math.round(weather.temperature)}°C</p>
-      <p class="conditions">${weather.conditions}</p>
+    </div>
 
-      <div class="weather-details">
-        <p><span>Feels like</span>${Math.round(weather.feelsLike)}°C</p>
-        <p><span>Humidity</span>${Math.round(weather.humidity)}%</p>
-        <p><span>Wind</span>${Math.round(weather.windSpeed)} km/h</p>
-      </div>
-    </article>
-  `;
+    <div class="weather-details">
+      <p><span>Feels like</span>${Math.round(weather.feelsLike)}°C</p>
+      <p><span>Humidity</span>${Math.round(weather.humidity)}%</p>
+      <p><span>Wind</span>${Math.round(weather.windSpeed)} km/h</p>
+    </div>
+  </article>
+`;
 }
 
 export function displayLoading() {
