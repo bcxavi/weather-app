@@ -2,8 +2,7 @@ const API_KEY = "8LKDBJ88CBXV2WYJTVFCAV9CQ";
 
 export async function getWeather(location) {
   try {
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${API_KEY}`;
-
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${API_KEY}`;
     const response = await fetch(url);
 
     if (!response.ok) {
