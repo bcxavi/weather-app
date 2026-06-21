@@ -9,6 +9,7 @@ export function displayWeather(weather) {
     `;
     return;
   }
+  updateBackground(weather.conditions);
 
   result.innerHTML = `
     <article class="weather-card">
@@ -44,4 +45,21 @@ export function displayError(message) {
       <p>${message}</p>
     </div>
   `;
+}
+
+function updateBackground(conditions) {
+  const body = document.body;
+  const normalizedConditions = conditions.toLowerCase();
+
+  body.className = "";
+
+  if (normalizedConditions.includes("rain")) {
+    body.classList.add("rainy");
+  } else if (normalizedConditions.includes("cloud")) {
+    body.classList.add("cloudy");
+  } else if (normalizedConditions.includes("clear")) {
+    body.classList.add("sunny");
+  } else {
+    body.classList.add("default-weather");
+  }
 }

@@ -102,3 +102,19 @@ button:hover {
 .error-card {
   color: #b91c1c;
 }
+
+body.sunny {
+  background: linear-gradient(135deg, #facc15, #fb923c);
+}
+
+body.cloudy {
+  background: linear-gradient(135deg, #cbd5e1, #64748b);
+}
+
+body.rainy {
+  background: linear-gradient(135deg, #60a5fa, #1e3a8a);
+}
+
+body.default-weather {
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+}
