@@ -118,3 +118,9 @@ body.rainy {
 body.default-weather {
   background: linear-gradient(135deg, #74ebd5, #9face6);
 }
+
+.weather-icon {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 12px;
+}

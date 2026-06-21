@@ -1,18 +1,23 @@
-export function displayWeather(weather) {
+import { getWeatherIcon } from "./weatherIcon";
+
+export async function displayWeather(weather) {
   const result = document.querySelector("#weather-result");
 
   if (!weather) {
-    result.innerHTML = `
-      <div class="weather-card error-card">
-        <p>City not found. Try again.</p>
-      </div>
-    `;
+    displayError("City not found. Try again.");
     return;
   }
+
   updateBackground(weather.conditions);
+
+  const iconSrc = await getWeatherIcon(weather.conditions);
 
   result.innerHTML = `
     <article class="weather-card">
+      <img class="weather-icon"
+           src="${iconSrc}"
+           alt="${weather.conditions}">
+
       <h2>${weather.location}</h2>
 
       <p class="temperature">${Math.round(weather.temperature)}°C</p>
