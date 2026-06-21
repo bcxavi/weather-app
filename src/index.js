@@ -1,3 +1,4 @@
 import "./styles.css";
+import { init } from "./modules/appController";
 
-console.log("Weather App is running");
+init();
