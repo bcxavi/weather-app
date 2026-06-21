@@ -1,5 +1,5 @@
 import { getWeather } from "./weatherApi";
-import { displayWeather } from "./dom";
+import { displayWeather, displayLoading, displayError } from "./dom";
 
 export function init() {
   const form = document.querySelector("#weather-form");
@@ -10,9 +10,19 @@ export function init() {
 
     const location = input.value.trim();
 
-    if (!location) return;
+    if (!location) {
+      displayError("Please enter a city.");
+      return;
+    }
+
+    displayLoading();
 
     const weather = await getWeather(location);
+
+    if (!weather) {
+      displayError("City not found. Try again.");
+      return;
+    }
 
     displayWeather(weather);
 

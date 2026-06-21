@@ -25,3 +25,23 @@ export function displayWeather(weather) {
     </article>
   `;
 }
+
+export function displayLoading() {
+  const result = document.querySelector("#weather-result");
+
+  result.innerHTML = `
+    <div class="weather-card">
+      <p>Loading weather...</p>
+    </div>
+  `;
+}
+
+export function displayError(message) {
+  const result = document.querySelector("#weather-result");
+
+  result.innerHTML = `
+    <div class="weather-card error-card">
+      <p>${message}</p>
+    </div>
+  `;
+}
