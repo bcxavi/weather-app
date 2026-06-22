@@ -15,7 +15,7 @@ export async function displayWeather(weather) {
   result.innerHTML = `
   <article class="weather-card">
     <div class="weather-main">
-      <div>
+      <div class="weather-summary">
         <img class="weather-icon"
              src="${iconSrc}"
              alt="${weather.conditions}">

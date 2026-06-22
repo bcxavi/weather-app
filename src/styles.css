@@ -13,8 +13,8 @@ body {
 }
 
 main {
-  width: min(92%, 560px);
-  padding: 24px;
+  width: min(92%, 520px);
+  padding: 28px;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
@@ -64,17 +64,14 @@ button:hover {
 }
 
 .weather-card {
-  padding: 24px;
-  border-radius: 26px;
-  background: rgba(255, 255, 255, 0.92);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
   text-align: left;
 }
 
 .weather-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
+  align-items: flex-start;
 }
 .weather-main > div {
   display: flex;
@@ -82,20 +79,25 @@ button:hover {
   justify-content: center;
 }
 
+.weather-summary {
+  display: grid;
+  gap: 4px;
+}
+
 .weather-icon {
-  width: 72px;
-  height: 72px;
-  margin: 0 0 8px;
+  width: 64px;
+  height: 64px;
+  margin: 0;
 }
 
 .weather-card h2 {
   margin: 0;
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .temperature {
   margin: 0;
-  font-size: 64px;
+  font-size: 56px;
   line-height: 1;
   font-weight: 800;
 }
@@ -117,7 +119,8 @@ button:hover {
   margin: 0;
   padding: 12px 10px;
   border-radius: 18px;
-  background: #f8fafc;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.25);
   font-weight: 700;
 }
 
@@ -132,6 +135,15 @@ button:hover {
 
 .error-card {
   color: #b91c1c;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 body.sunny {
